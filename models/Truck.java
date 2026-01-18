@@ -1,5 +1,5 @@
 public class Truck extends Vehicle{
-   Truck(String color,String RegNo,VehicleType Vehicletype){
+   Truck(String color,String RegNo){
      super(color,RegNo,Vehicletype.TRUCK);
    }
     

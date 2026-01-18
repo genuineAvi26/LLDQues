@@ -1,30 +1,31 @@
 import models.*;
+public abstract class ParkingSpot {
+    private int spotId;
+    private spotType spotType;
+    private Status status;
+    private Vehicle vehicle;
 
-public class ParkingSpot {
-    String spotId;
-    ParkingFloor floor;
-    Status status;
-    ParkingSpot(String spotId,ParkingFloor floor,Status status){
-        this.floor= floor;
-        this.spotId= spotId;
-        this.status= status;
+    ParkingSpot(int spotId,spotType spotType){
+        this.spotId=spotId;
+        this.spotType=spotType;
+        this.status=status.AVAILABLE;
+        // this.vehicle=vehicle;
     }
-    String getSpotId(){
-        return this.spotId;
+    boolean isAvailable(){
+        return status==Status.AVAILABLE;
     }
-    ParkingFloor getFloor(){
-        return this.floor;
+    public void assignVehicle(Vehicle vehicle){
+        this.vehicle=vehicle;
+        this.status=OCCUPIED;
     }
-    Status getStatus(){
-        return this.status;
+    public void removeVehicle(){
+        this.vehicle=null;
+        this.status=AVAILABLE;
     }
-    void setStatus(Status status){
-        this.status= status;
+    public int getSpotId(){
+        return spotId;
     }
-    void setFloor(ParkingFloor floor){
-        this.floor= floor;
-    }
-    void setSpotId(String spotId){
-        this.spotId= spotId;
+    public spotType getSpotType(){
+        return spotType;
     }
 }

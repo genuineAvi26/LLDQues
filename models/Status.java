@@ -1,3 +1,3 @@
 public enum Status {
-    OCCUPIED,FREE;
+    OCCUPIED,AVAILABLE;
 }
